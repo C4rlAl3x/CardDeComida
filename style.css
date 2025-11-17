@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    text-align: center; 
+}
+
+:root {
+    --cor-primaria: #007bff;
+    --cor-secundaria: #28a745;
+    --cor-fundo: #f8f9fa;
+    --cor-texto: #343a40;
+    --cor-destaque: #dc3545;
+}
+
+header {
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.main-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+    text-align: left; 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.card-main {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.card-content.title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #343a40;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.card-content.price {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--cor-destaque);
+    background-color: #ffe8e8;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+.card-footer {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.card.expanded .card-footer {
+    max-height: 150px;
+    padding: 15px; 
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.card-footer p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 0; 
+}
